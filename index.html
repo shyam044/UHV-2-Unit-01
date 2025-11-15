@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UHV-2 Unit-01 - Questions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        header {
+            background-color: #0077cc;
+            color: white;
+            padding: 0.9rem 0.5rem;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 1.8rem auto;
+            padding: 1.1rem;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+            page-break-after: always;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #0077cc;
+            margin: 0 0 0.9rem;
+            font-size: 1.55rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: #444;
+            margin: 1.1rem 0 0.55rem;
+            font-size: 1.28rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0.55rem 0;
+        }
+
+        ul, ol {
+            margin: 0.55rem 0;
+            padding-left: 1.3rem;
+        }
+
+        li {
+            margin-bottom: 0.35rem;
+        }
+
+        li > ul, li > ol {
+            margin: 0.35rem 0;
+            padding-left: 1.2rem;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 11px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.88rem;
+            line-height: 1.4;
+            margin: 0.7rem 0;
+            border: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.25rem;
+                padding: 0.75rem 0.5rem;
+            }
+
+            .container {
+                margin: 1.2rem auto;
+                padding: 0.95rem;
+                border-radius: 5px;
+            }
+
+            h2 {
+                font-size: 1.35rem;
+                margin-bottom: 0.8rem;
+            }
+
+            h3 {
+                font-size: 1.15rem;
+                margin: 0.95rem 0 0.45rem;
+            }
+
+            ul, ol {
+                padding-left: 1rem;
+            }
+
+            li > ul, li > ol {
+                padding-left: 1rem;
+            }
+
+            pre {
+                font-size: 0.82rem;
+                padding: 9px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 1rem auto;
+                padding: 0.85rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            ul, ol {
+                padding-left: 0.9rem;
+            }
+
+            li > ul, li > ol {
+                padding-left: 0.9rem;
+            }
+        }
+
+        @media print {
+            .container {
+                page-break-after: always;
+                box-shadow: none;
+                margin: 0;
+                padding: 1rem;
+                border-radius: 0;
+            }
+
+            header {
+                background: #0077cc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+
+        ol.roman {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0.55rem 0;
+        }
+
+        ol.roman > li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 1.6rem;
+            margin-bottom: 0.35rem;
+        }
+
+        ol.roman > li::before {
+            content: counter(item, lower-roman) ") ";
+            position: absolute;
+            left: 0;
+            color: #0077cc;
+            font-weight: bold;
+            width: 1.4rem;
+            text-align: left;
+            font-size: 0.94em;
+            top: 0;
+        }
+
+        ol.roman ol {
+            counter-reset: subitem;
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0.3rem;
+        }
+
+        ol.roman ol > li {
+            counter-increment: subitem;
+            position: relative;
+            padding-left: 1.7rem;
+            margin-bottom: 0.25rem;
+        }
+
+        ol.roman ol > li::before {
+            content: "(" counter(subitem, lower-alpha) ") ";
+            position: absolute;
+            left: 0;
+            color: #0077cc;
+            font-weight: bold;
+            width: 1.5rem;
+            font-size: 0.92em;
+        }
+
+        ol.roman li > ul {
+            margin: 0.35rem 0 0.5rem 1.4rem;
+            padding-left: 0;
+        }
+
+        @media (max-width: 768px) {
+            ol.roman > li {
+                padding-left: 1.5rem;
+            }
+
+            ol.roman > li::before {
+                width: 1.3rem;
+            }
+
+            ol.roman ol > li {
+                padding-left: 1.6rem;
+            }
+
+            ol.roman ol > li::before {
+                width: 1.4rem;
+            }
+
+            ol.roman li > ul {
+                margin-left: 1rem;
+            }
+        }
+
+        .indent-block {
+            margin-left: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .indent-block {
+                margin-left: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .indent-block {
+                margin-left: 0.8rem;
+            }
+        }
+
+        img {
+            display: block;
+            max-width: 58%;
+            height: auto;
+            max-height: 270px;
+            object-fit: contain;
+            margin: 1rem auto;
+            border-radius: 6px;
+            cursor: zoom-in;
+            transition: transform 0.2s ease;
+            border: 1px solid #ddd;
+        }
+
+        img:hover {
+            transform: scale(1.04);
+        }
+
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(6px);
+        }
+
+        #lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #lightbox img {
+            max-width: 88%;
+            max-height: 88%;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.3);
+            transform: scale(0.85);
+            transition: transform 0.3s ease;
+            cursor: zoom-out;
+        }
+
+        #lightbox.active img {
+            transform: scale(1);
+        }
+
+        #image-tip {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 119, 204, 0.96);
+            color: #fff;
+            padding: 0.7rem 1.1rem;
+            border-radius: 6px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease;
+            white-space: nowrap;
+        }
+
+        #image-tip.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 480px) {
+            #image-tip {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        UHV-2 Unit-01
+    </header>
+
+    <div class="container">
+        <h2>1. Purpose & Motivation for the Course / Recapitulation of UHV-I</h2>
+        <h3>What is the purpose and motivation for value education?</h3>
+        <ul>
+            <li>Holistic Perspective: Develops a comprehensive view based on self-exploration of self, family, society, and nature.</li>
+            <li>Harmony Clarity: Builds understanding of harmony in human being, family, society, and existence.</li>
+            <li>Self-Reflection: Strengthens the ability to reflect on one's thoughts and actions.</li>
+            <li>Commitment to Act: Fosters courage and dedication to live ethically.</li>
+            <li>Addressing Crises: Motivates to resolve individual, societal, and environmental issues through value-based living.</li>
+        </ul>
+        <h3>Explain the need and importance of universal human values.</h3>
+        <ul>
+            <li>Shape Life: Essential to guide behavior and decision-making in society.</li>
+            <li>Understand Needs: Helps visualize goals and direct fulfillment.</li>
+            <li>Remove Confusions: Eliminates contradictions and utilizes technology rightly.</li>
+            <li>Build Bonds: Promotes humanity, respect, and positive relationships.</li>
+            <li>Overcome Negativity: Counters violence, disorders, and lack of unity.</li>
+        </ul>
+        <h3>Describe the factors that influence self-discipline.</h3>
+        <ul>
+            <li>Stress Levels: High stress reduces ability to control impulses.</li>
+            <li>Mental Health: Issues like anxiety affect self-regulation.</li>
+            <li>Peer Pressure: Social influences can hinder or support discipline.</li>
+            <li>Guidance Structure: Lack of proper guidance leads to poor control.</li>
+            <li>Family Environment: Upbringing and intelligence play key roles.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-01
+    </header>
+
+    <div class="container">
+        <h2>2. Self-Exploration — Meaning, Content, Process / Natural Acceptance / Experiential Validation</h2>
+        <h3>What do you mean by self-exploration?</h3>
+        <ul>
+            <li>Personal Discovery: Process of understanding thoughts, feelings, and motivations.</li>
+            <li>Root Causes: Examining why one behaves in certain ways.</li>
+            <li>Growth Tool: Leads to self-awareness and personal development.</li>
+            <li>Ongoing Journey: Continuous reflection for better life choices.</li>
+            <li>Inner Harmony: Aligns actions with true self for happiness.</li>
+        </ul>
+        <h3>Explain the process of self-exploration.</h3>
+        <ul>
+            <li>Assessment: Take inventories to identify strengths and weaknesses.</li>
+            <li>Reflection: Journal thoughts and experiences regularly.</li>
+            <li>Mindfulness: Practice meditation to observe emotions.</li>
+            <li>Seek Feedback: Get insights from trusted others.</li>
+            <li>Track Progress: Reflect on growth and adjust focus.</li>
+        </ul>
+        <h3>Discuss about natural acceptance and experiential validation.</h3>
+        <ul>
+            <li>Natural Acceptance: Unconditional embrace of self and environment.</li>
+            <li>Experiential Validation: Learning through direct personal experiences.</li>
+            <li>Self-Exploration Tools: Contribute to awareness and prosperity.</li>
+            <li>Reflection Practice: Engage in self-reflection for validation.</li>
+            <li>Ongoing Process: Continuously seek new experiences for growth.</li>
+        </ul>
+        <h3>What do you mean by MBTI? Explain its process.</h3>
+        <ul>
+            <li>Personality Framework: Myers-Briggs Type Indicator categorizes personalities into 16 types.</li>
+            <li>Self-Report Tool: Individuals answer questions on preferences.</li>
+            <li>Four Dichotomies: Based on E/I, S/N, T/F, J/P scales.</li>
+            <li>Understanding Insights: Helps perceive world and make decisions.</li>
+            <li>Application Areas: Used for self-awareness and career guidance.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-01
+    </header>
+
+    <div class="container">
+        <h2>3. Continuous Happiness & Prosperity — Basic Human Aspirations</h2>
+        <h3>What do you mean by continuous happiness? How is it possible?</h3>
+        <ul>
+            <li>Inner Harmony: State of liking and balance within oneself.</li>
+            <li>Right Understanding: Achieved through knowledge of self and relationships.</li>
+            <li>Prosperity Link: Connected to feeling of sufficient facilities.</li>
+            <li>Self-Exploration: Possible via acceptance and validation.</li>
+            <li>Ongoing State: Maintained by harmonious living.</li>
+        </ul>
+        <h3>Discuss the different basic human aspirations.</h3>
+        <ul>
+            <li>Happiness: Continuous state of inner harmony.</li>
+            <li>Prosperity: Feeling of having more than needed facilities.</li>
+            <li>Personal Growth: Developing skills and self-awareness.</li>
+            <li>Relationships: Fulfilling connections with others.</li>
+            <li>Success: Achieving goals in career and life.</li>
+        </ul>
+        <h3>How to understand happiness and prosperity?</h3>
+        <ul>
+            <li>Inner State: Happiness is harmony within self.</li>
+            <li>Material Aspect: Prosperity is abundance in facilities.</li>
+            <li>Aspirations Base: Core drives for human efforts.</li>
+            <li>Critical Appraisal: Evaluate current scenario critically.</li>
+            <li>Harmony Levels: Understand through living in balance.</li>
+        </ul>
+        <h3>What are the methods to fulfil human aspirations?</h3>
+        <ul>
+            <li>Right Understanding: Gain knowledge for correct priorities.</li>
+            <li>Relationships: Build harmonious connections with others.</li>
+            <li>Physical Facilities: Ensure sufficient material needs.</li>
+            <li>Harmony Living: Practice at all levels for continuity.</li>
+            <li>Self-Reflection: Use exploration for fulfillment.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-01
+    </header>
+
+    <div class="container">
+        <h2>4. Right Understanding, Relationship & Physical Facility — Requirements for Fulfilment of Aspirations</h2>
+        <h3>Discuss about different types of personality traits.</h3>
+        <ul>
+            <li>Openness: Curiosity and creativity in experiences.</li>
+            <li>Conscientiousness: Organization and dependability.</li>
+            <li>Extraversion: Sociability and assertiveness.</li>
+            <li>Agreeableness: Compassion and cooperation.</li>
+            <li>Neuroticism: Emotional stability and anxiety levels.</li>
+        </ul>
+        <h3>Describe the different types of personality indicators.</h3>
+        <ul>
+            <li>MBTI: 16 types based on preferences.</li>
+            <li>Big Five: Five traits like openness.</li>
+            <li>Type A/B: Competitive vs relaxed.</li>
+            <li>Enneagram: Nine interconnected types.</li>
+            <li>DiSC: Dominance, influence, steadiness, compliance.</li>
+        </ul>
+        <h3>What do you mean by self-discipline? Discuss the steps?</h3>
+        <ul>
+            <li>Controlled Behavior: Ability to obey rules consistently.</li>
+            <li>Acceptance: Acknowledge need for discipline.</li>
+            <li>Willpower: Build mental strength to resist temptations.</li>
+            <li>Hard Work: Practice consistently to form habits.</li>
+            <li>Persistence: Maintain efforts despite challenges.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-01
+    </header>
+
+    <div class="container">
+        <h2>5. Understanding Happiness & Prosperity Correctly — Critical Appraisal of the Current Scenario</h2>
+        <h3>Explain the content of a critical appraisal?</h3>
+        <ul>
+            <li>Trustworthiness: Assess reliability of research.</li>
+            <li>Validity: Examine internal consistency.</li>
+            <li>Relevance: Judge applicability to context.</li>
+            <li>Generalizability: Check if results apply broadly.</li>
+            <li>Systematic Review: Carefully evaluate methodology.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-01
+    </header>
+
+    <div class="container">
+        <h2>6. Method to Fulfil Aspirations: Living in Harmony at Various Levels</h2>
+        <h3>Write about living harmony at various levels.</h3>
+        <ul>
+            <li>Individual Level: Achieve inner peace through self-understanding.</li>
+            <li>Family Level: Foster mutual respect and trust.</li>
+            <li>Society Level: Promote undivided and universal order.</li>
+            <li>Nature Level: Ensure recyclability and mutual fulfillment.</li>
+            <li>Existence Level: Recognize coexistence in space.</li>
+        </ul>
+    </div>
+
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        document.querySelectorAll("img").forEach(img => {
+            img.addEventListener("click", () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add("active");
+            });
+        });
+
+        lightbox.addEventListener("click", () => {
+            lightbox.classList.remove("active");
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const tip = document.getElementById("image-tip");
+            tip.classList.add("show");
+            setTimeout(() => tip.classList.remove("show"), 5000);
+        });
+    </script>
+
+</body>
+
+</html>
